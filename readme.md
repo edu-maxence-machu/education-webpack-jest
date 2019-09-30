@@ -77,4 +77,9 @@ entry : {
 **Référence: https://hackernoon.com/lets-start-with-webpack-4-91a0f1dba02e**
 -> Part 8 : "Adding post-css"
 
+### 8 Ajout de votre clé API grâce au plugin DOT-ENV 
+
+**Référence: https://www.npmjs.com/package/dotenv-webpacke**
+-> Part 8 : "Adding post-css"
+
 
