@@ -79,7 +79,8 @@ entry : {
 
 ### 8 Ajout de votre clé API grâce au plugin DOT-ENV 
 
-**Référence: https://www.npmjs.com/package/dotenv-webpacke**
--> Part 8 : "Adding post-css"
+- Créez un fichier .env à la racine
+- Renseignez "WEATHER_API_KEY=votre_cle_api"
+- Vous trouverez une clé API sur le site https://api.meteo-concept.com/
 
 
