@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function(event) {
 Fonction qui appelle l'API meteo-concept
 */
 async function callAPI(){
-    let temps_demain = await fetch('https://api.meteo-concept.com/api/forecast/daily/1?token=daeef69ef0d5bfe7972611164d706a54b24f4b8a9414a0020a35fa14b594f997&insee=76540');
+    let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=${process.env.WEATHER_API_KEY}&insee=76540`);
     console.log(temps_demain)
     return await temps_demain.json();
 }
