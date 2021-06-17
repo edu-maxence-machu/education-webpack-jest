@@ -2,7 +2,7 @@
 
 L'objectif de ce projet consiste en la mise en place d'un projet configuré avec Webpack et testé avec Jest.
 
-##Webpack
+## Webpack
 
 > Webpack est un outil qui est aujourd'hui incontournable dès lors que l'on travaille sur des projets JavaScript complexes. Il va nous permettre de morceler notre code sous forme de module qui seront ensuite fusionnés en un seul fichier par Webpack. Il dispose, en plus, d'un système de "loaders" qui vont permettre d'inclure de nouveaux types de fichiers ou d'appliquer des transformations spécifique (comme une transformation ES2015->ES5).
 
