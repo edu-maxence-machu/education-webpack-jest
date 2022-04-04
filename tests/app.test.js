@@ -14,6 +14,7 @@ describe('Weather string', () => {
 Jest est livré avec jsdom qui simule un environnement DOM comme si vous étiez dans le navigateur. 
 Cela signifie que chaque API du DOM que nous appelons peut être observée de la même manière qu'elle le serait dans un navigateur
 */
+/** @jest-environment jsdom */
 describe('DOM', () => {
 
     document.body.innerHTML =
@@ -28,14 +29,23 @@ describe('DOM', () => {
     })
 })
 
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(),
+  })
+);
+
 describe('API', () => {
-    it('shoult be a 200', () => {
+    it('should return current weather', async () => {
+        fetch.mockImplementationOnce(() => Promise.resolve({
+            json: () => Promise.resolve({
+                forecast : {
+                    weather : 0
+                }
+            })
+        }));
 
-        global.fetch = jest.fn(() => {
-            Promise.resolve();
-         });
-
-        let weather = callAPI();
+        let weather = await callAPI();
         expect(fetch).toHaveBeenCalledTimes(1);
         expect(typeof weather).toBe('object')
     })

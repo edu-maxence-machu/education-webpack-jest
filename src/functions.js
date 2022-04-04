@@ -7,8 +7,8 @@ async function callAPI(){
     [5] TODO: Remplacez [lat, lng] dans l'appel API
     */
     let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=${process.env.WEATHER_API_KEY}&latLng=[LAT],[LNG]`);
-    //let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=token=${process.env.WEATHER_API_KEY}&insee=76540`);
     return await temps_demain.json();
+    //let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=token=${process.env.WEATHER_API_KEY}&insee=76540`);
 }
 
 

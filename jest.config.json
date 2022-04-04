@@ -1,0 +1,5 @@
+{
+    "collectCoverage": true,
+    "coverageReporters": ["html"],
+    "testEnvironment": "jsdom"
+}
