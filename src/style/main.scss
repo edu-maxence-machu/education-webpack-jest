@@ -12,36 +12,4 @@ body {
     flex-direction: column;
     background-color: $grey;
     background-size: cover;
-    &.NOTSET {
-        background-color: $grey;
-    }
-    &.SUNNY {
-        background-image: url('../assets/images/yes.jpg');
-    }
-}
-
-
-.weather-container {
-    display: flex;
-    flex: 1;
-    align-items: center; 
-    justify-content: center;
-    flex-direction: column;
-    .js-online {
-        padding: 0.3rem 0.5rem;
-        border-radius: 5px;
-        color: white;
-
-        &.online {
-            background-color:$green;
-        }
-
-        &.offine {
-            background-color:$green;
-        }
-
-        &.checking {
-            background-color: $grey;
-        }
-    }    
 }

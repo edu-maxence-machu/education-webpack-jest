@@ -3,3 +3,4 @@ dist
 coverage
 logs
 tests_output
+.DS_Store
