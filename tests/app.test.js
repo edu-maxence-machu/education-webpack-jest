@@ -25,7 +25,9 @@ describe('DOM', () => {
     it('should show offline', () => {  
         renderOnline(false);
 
-        expect(document.getElementById('js-online').innerText).toEqual('Your are offline')
+        let DOMInnerText = document.getElementById('js-online').innerText;
+
+        expect(DOMInnerText).toEqual('Your are offline')
     })
 })
 
@@ -37,6 +39,7 @@ global.fetch = jest.fn(() =>
 
 describe('API', () => {
     it('should return current weather', async () => {
+
         fetch.mockImplementationOnce(() => Promise.resolve({
             json: () => Promise.resolve({
                 forecast : {
@@ -48,5 +51,17 @@ describe('API', () => {
         let weather = await callAPI();
         expect(fetch).toHaveBeenCalledTimes(1);
         expect(typeof weather).toBe('object')
+    })
+
+    it('should return an error', async () => {
+            
+            fetch.mockImplementationOnce(() => Promise.resolve({
+                json: () => Promise.reject({
+                    message : 'error'
+                })
+            }));
+    
+            let weather = await callAPI();
+            expect(weather.message).toBe('error')
     })
 })

@@ -6,8 +6,13 @@ async function callAPI(){
     [5] TODO: Récupérer la position de l'utilisateur 
     [5] TODO: Remplacez [lat, lng] dans l'appel API
     */
-    let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=${process.env.WEATHER_API_KEY}&latLng=[LAT],[LNG]`);
-    return await temps_demain.json();
+    try {
+        let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=${process.env.WEATHER_API_KEY}&latLng=[LAT],[LNG]`);
+        let data = await temps_demain.json();
+        return data;
+    } catch(e){
+        return e;
+    }
     //let temps_demain = await fetch(`https://api.meteo-concept.com/api/forecast/daily/1?token=token=${process.env.WEATHER_API_KEY}&insee=76540`);
 }
 

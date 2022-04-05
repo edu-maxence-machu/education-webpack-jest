@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', async function(event) {
 
     if(navigator.onLine){
         let temps = await callAPI();
-        console.log(temps)
     
         let code_temps = temps.forecast.weather
         console.info('Le code temps renvoyé par l\'API est : ', code_temps);
